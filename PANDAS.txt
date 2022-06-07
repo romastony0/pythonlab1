@@ -1,0 +1,57 @@
+import pandas as pd;
+
+file_path = r"C:\Users\Asif Raana\Downloads\ha.csv"
+
+read = pd.read_csv(file_path)
+print(read)
+print("-------------------------------")
+
+# display only name column
+result = read.loc[:,'Name']
+print(result)
+print("-------------------------------")
+
+# add a column (mobile_no) and store mobile numbers to column
+mobile = [9876543,34567854,987654,2345678]
+read['Mobile_no'] = mobile
+print(read)
+print("-------------------------------")
+
+# delete record with name gopal
+read = read[read.Name != 'gopal']
+print(read)
+print("-------------------------------")
+
+#add a new record
+read.loc[len(read.index)] = ['21csea11','hari','MCA',987654443]
+print(read)
+print("-------------------------------")
+
+# display record with mca course
+s = read[read['Course'] == 'MCA']
+print(s)
+print("-------------------------------")
+
+# display only second record
+c = read[read.index == 1]
+print(c)
+print("-------------------------------")
+
+# insert scholarship and fill 1000 to all
+scholar = 1000
+read['Scholarship'] = scholar
+print(read)
+print("-------------------------------")
+
+#add scholarship 2000 to msc cs
+add = 2000
+c = read['Scholarship']
+ki=(read['Course'] == 'msc cs')
+read.loc[ki,'Scholarship'] = c+add
+print(read)
+print("-------------------------------")
+
+# display mobile number for msc cs
+a = (read['Course'] == 'msc cs')
+v = read.loc[a,'Mobile_no']
+print(v)
