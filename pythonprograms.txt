@@ -1,0 +1,183 @@
+1. Arithmetic operations on list
+
+employee = ["kumar","sekar","kumar","moorthy"]
+salary = [1000, 5000, 3000, 2000]
+new_salary = []
+
+for each_salary in salary:
+    new_salary.append(each_salary+1000)
+print(new_salary)
+
+new_salary[0] += 1000
+print("Salary for",employee[0], "is",new_salary[0])
+
+
+
+2. Arithemetic table
+
+operation = print("""Select the operation:
+               1. Addition
+               2. subtraction
+               3. multiplication
+               4. division""")
+choice = int(input("Enter your choice: "))
+tab = int(input("Enter the table number: "))
+ite = int(input("Enter the number of iteration: "))
+
+if(choice == 1):
+    print("Addition table")
+    for i in range(1, ite+1):
+        print(tab, "+", i,"=" ,ite+i)
+
+if(choice == 2):
+    print("Subtraction table")
+    for i in range(1, ite+1):
+        print(tab, "-", i, "=", ite-i)
+
+if (choice == 3):
+    print("Multiplication table")
+    for i in range(1, ite + 1):
+        print(tab, "*", i, "=", ite * i)
+
+if (choice == 4):
+    print("division table")
+    for i in range(1, ite + 1):
+        print(tab, "/", i, "=", ite / i)
+
+else:
+    print("Enter the valid choice!")
+
+
+3. Data structures and function
+
+my_friends = ["kumar", "sekar", "gopal", "moorthy"]
+mca = []
+for each_val in my_friends:
+    mca.append("mca " + each_val)
+print(mca)
+
+bu = []
+for each_val in my_friends:
+    bu.append(each_val + " Bharathiar University")
+print(bu)
+
+my_friends.remove("gopal")
+print(my_friends)
+
+my_friends.insert(2, "manoj")
+print(my_friends)
+
+element = "sekar"
+if element in my_friends:
+    print("Sekar is found at", my_friends.index(element))
+
+my_friends.sort(reverse=True)
+print(my_friends)
+
+del my_friends[2:3]
+print(my_friends)
+
+4. continue and break
+
+import random
+
+random_no = random.randint(1,100)
+print("The generated random no is: ", random_no)
+
+while(random_no):
+    if random_no % 2 == 0 and random_no <=49:
+        print(random_no)
+
+    elif(random_no >= 50 and random_no <=59):
+        continue
+    elif(random_no >=96 and random_no <=99):
+        print(random_no)
+    break
+
+
+5. Function
+
+def fact(num):
+    f = 1
+    for i in range(1, num+1):
+        f = f*i
+    print("The Factorial No of", num, "value is", f)
+
+
+def stringreverse(str):
+    new = str[::-1]
+    print("The reverse string of ", str,"is ", new)
+
+
+def prime():
+    print("To find the prime number between the numbers")
+    lower = int(input("Enter the lower limit: "))
+    upper = int(input("Enter the upper limit: "))
+
+    print("Prime numbers between", lower, "and", upper, "are: ")
+
+    for num in range(lower, upper+1):
+        if num > 1:
+             for i in range(2, num):
+                if (num % i) == 0:
+                    break
+             else:
+                 print(num)
+
+
+def findstring():
+    str = input("Enter to find the value: ")
+    message = "Python is a fun programming language"
+    ss = message.find(str)
+    print(ss)
+
+
+
+fact(7)
+stringreverse("inba")
+prime()
+findstring()
+
+
+
+6. eb bill
+
+
+def CalculateBill(units):
+    if (units>=1 and units<=100):
+        return units * 0
+
+
+    elif(units>=101 and units<=200):
+        return units * 4
+
+    elif(units >= 201 and units<=250):
+        return units * 5
+
+    elif(units >=251 and units<=300):
+        return units * 8
+
+    elif(units >= 301):
+        return units * 15
+
+    else:
+        print("Invalid units")
+
+units = int(input("Enter the units consumed: "))
+print(CalculateBill(units))
+
+
+7. regular expression
+
+import re
+
+s = """Hello form shubhamg@gmail.com to priya@yahoo.com about the meeting 21CSEA56"""
+
+emails = re.findall(r"[a-z0-9\.\-+_]+@[a-z0-9\.\-+_]+\.[a-z]+",s)
+print(emails)
+
+reg = re.findall("\d+.\w.+\d",s)
+print(reg)
+ 
+
+
