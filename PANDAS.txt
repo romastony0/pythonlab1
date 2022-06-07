@@ -39,6 +39,7 @@ print(c)
 print("-------------------------------")
 
 # insert scholarship and fill 1000 to all
+print(k)
 scholar = 1000
 k['Scholarship'] = scholar
 print(k)
@@ -53,6 +54,6 @@ print(k)
 print("-------------------------------")
 
 # display mobile number for msc cs
-a = (k['Course'] == 'msc cs')
+a = k["Course"] == "msc cs";
 v = k.loc[a,'Mobile_no']
 print(v)
