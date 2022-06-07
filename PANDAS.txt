@@ -23,8 +23,9 @@ print(read)
 print("-------------------------------")
 
 #add a new record
-read.loc[len(read.index)] = ['21csea11','hari','MCA',987654443]
+read.loc[len(read.index)+1] = ['21csea11','hari','MCA',987654443]
 print(read)
+k=read
 print("-------------------------------")
 
 # display record with mca course
@@ -39,19 +40,19 @@ print("-------------------------------")
 
 # insert scholarship and fill 1000 to all
 scholar = 1000
-read['Scholarship'] = scholar
-print(read)
+k['Scholarship'] = scholar
+print(k)
 print("-------------------------------")
 
 #add scholarship 2000 to msc cs
 add = 2000
-c = read['Scholarship']
-ki=(read['Course'] == 'msc cs')
-read.loc[ki,'Scholarship'] = c+add
-print(read)
+c = k['Scholarship']
+ki=(k['Course'] == 'msc cs')
+k.loc[ki,'Scholarship'] = c+add
+print(k)
 print("-------------------------------")
 
 # display mobile number for msc cs
-a = (read['Course'] == 'msc cs')
-v = read.loc[a,'Mobile_no']
+a = (k['Course'] == 'msc cs')
+v = k.loc[a,'Mobile_no']
 print(v)
